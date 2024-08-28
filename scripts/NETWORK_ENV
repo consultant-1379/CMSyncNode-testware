@@ -1,0 +1,2 @@
+# Target Netsim VMs for ENM 228
+NETSIM_LIST=( ieatnetsimv5028-01 ieatnetsimv5028-02 ieatnetsimv5028-03 )

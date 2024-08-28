@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.ericsson.nms.cmmediation.taf</groupId>
+    <artifactId>CMSyncNode-testware</artifactId>
+    <version>1.2.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>sync-node-impl</artifactId>
+<description>
+			Implementation module for the CM Mediation operators which can be used to test configuration management in an ENM system.
+	</description>
+
+	<properties>
+		<version.junit>4.3.1</version.junit>
+		<version.mockito>1.9.5</version.mockito>
+		<version.powermock.module>1.5.5</version.powermock.module>
+		<version.powermock.mockito>1.5.5</version.powermock.mockito>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>com.ericsson.nms.cmmediation.taf</groupId>
+			<artifactId>sync-node-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.oss.services.cm</groupId>
+			<artifactId>CmEditor-impl</artifactId>
+			<version>1.1.119</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.3.1</version>		
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>${version.mockito}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+			<version>${version.powermock.module}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito</artifactId>
+			<version>${version.powermock.mockito}</version>
+			<scope>test</scope>
+		</dependency>
+		        <dependency>
+            <groupId>com.ericsson.cifwk</groupId>
+            <artifactId>taf-scenario</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>com.ericsson.cifwk</groupId>
+			<artifactId>taf-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.nms</groupId>
+			<artifactId>HostConfigurator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.ericsson.cifwk</groupId>
+			<artifactId>http-tool</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.surefire</groupId>
+						<artifactId>surefire-junit47</artifactId>
+						<version>2.17</version>
+					</dependency>
+					<dependency>
+						<groupId>junit</groupId>
+						<artifactId>junit</artifactId>
+						<version>4.3.1</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

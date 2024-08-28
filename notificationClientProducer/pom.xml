@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.ericsson.oss.test.notification</groupId>
+  <artifactId>notificationClientProducer</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>notificationClientProducer</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+		<groupId>com.ericsson.nms.moci.cello</groupId>
+		<artifactId>idls</artifactId>
+		<version>1.0.1</version>
+	</dependency>
+	
+	<dependency>
+      <groupId>com.microfocus.visibroker</groupId>
+      <artifactId>vbsec</artifactId>
+      <version>8.5</version>
+    </dependency>
+    <dependency>
+      <groupId>com.microfocus.visibroker</groupId>
+      <artifactId>vbjorb</artifactId>
+      <version>8.5</version>
+    </dependency>
+    <dependency>
+		<artifactId>network-element-connector-api-jar</artifactId>
+		<groupId>com.ericsson.oss.mediation</groupId>
+		<version>1.4.1</version>
+	</dependency>
+    
+    <dependency>
+		<artifactId>network-element-connector-converters-jar</artifactId>
+		<groupId>com.ericsson.oss.mediation</groupId>
+		<version>1.11.5</version>
+	</dependency>
+	
+	<dependency>
+		<artifactId>model-service-api-jar</artifactId>
+		<groupId>com.ericsson.oss.itpf.modeling</groupId>
+		<version>6.12.6</version>
+	</dependency>
+
+	<dependency>
+		<groupId>commons-httpclient</groupId>
+		<artifactId>commons-httpclient</artifactId>
+		<version>3.1</version>
+	</dependency>
+	
+	<dependency>
+  		<groupId>com.borland.enterprise.license</groupId>
+  		<artifactId>lm</artifactId>
+  		<version>CXP9014976-R2D01</version>
+</dependency>
+
+<dependency>
+	<groupId>org.slf4j</groupId>
+	<artifactId>slf4j-api</artifactId>
+	<version>1.7.12</version>
+</dependency>
+<dependency>
+	<groupId>org.slf4j</groupId>
+	<artifactId>slf4j-simple</artifactId>
+	<version>1.7.12</version>
+</dependency>
+  </dependencies>
+  
+ <build>
+    <plugins>
+        <plugin>
+        
+		  <groupId>org.apache.maven.plugins</groupId>
+		  <artifactId>maven-shade-plugin</artifactId>
+		  <version>2.3</version>
+		  <executions>
+		     <!-- Run shade goal on package phase -->
+		    <execution>
+			<phase>package</phase>
+			<goals>
+				<goal>shade</goal>
+			</goals>
+			<configuration>
+			<finalName>notificationClientProducer</finalName>
+			  <transformers>
+                    <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+					<mainClass>com.ericsson.oss.test.notification.clientProducer.NotificationClientStarter</mainClass>
+				</transformer>
+			  </transformers>
+			</configuration>
+		      </execution>
+		  </executions>
+		</plugin>
+    </plugins>
+</build>
+  
+  
+</project>

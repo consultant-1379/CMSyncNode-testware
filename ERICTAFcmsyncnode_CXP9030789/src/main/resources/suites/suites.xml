@@ -1,0 +1,33 @@
+<suite name="RegressionSuite">
+
+	<test name="CM_SYNC_NODE_TEST" preserve-order="true">
+		<classes>
+		  <class name="com.ericsson.oss.cm.services.test.cases.DependenciesTest" />
+			 <methods>  
+ 				  <include name="VerifyAllDependencies"/>
+ 			</methods>
+		  <!--  <class name="com.ericsson.oss.cm.services.test.cases.CmTopologySyncNotifications" />
+			 <methods>  
+ 				  <include name="Successful1Node1Notification"/>
+ 			</methods>  -->
+ 			
+ 			  <class name="com.ericsson.oss.cm.services.test.cases.CmTopologySync" />
+			<methods>
+				START GENERAL REGRESSION TEST SUITE				
+				<!-- <include name="SuccessfulSynchOf1Node"/> 
+  			  	 <include name="SuccessfulSyncOf5Nodes"/> -->
+ 			    <include name="SuccessfulSyncOfNodesInParallelOf38Nodes"/>			
+				<!-- <include name="SuccessfulReSyncOf1Node"/>
+				<include name="UnSuccessfulSynchOf1Node"/> -->
+				<!-- 
+				<include name="SuccessfulSyncOf100Nodes"/>
+				<include name="SuccessfulSyncOf500Nodes"/>
+				<include name="SuccessfulSyncOfNodesInParallelOf1000Nodes"/>
+				<include name="SuccessfulReSyncOf1NodeAfterMoCreationAndDeletion"/> -->
+ 		 	</methods>  
+  			 
+		</classes>   
+	</test>
+	
+	
+</suite> 
